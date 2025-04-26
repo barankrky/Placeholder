@@ -1,0 +1,78 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:ScrollView class="debug-window-root">
+        <!-- Header -->
+        <ui:VisualElement class="header-container">
+            <ui:Label text="MCP Debug Console" class="header-title" />
+            <ui:Label text="Model Context Protocol Connection Monitor" class="header-subtitle" />
+        </ui:VisualElement>
+        
+        <!-- Connection Controls Section -->
+        <ui:VisualElement class="section-container">
+            <ui:Label text="Connection" class="section-header" />
+            
+            <ui:VisualElement style="flex-direction: row; align-items: center; margin-bottom: 10px;">
+                <ui:Label text="Status:" class="status-label" />
+                <ui:Label text="Not Connected" name="connection-status" class="status-label status-disconnected" style="margin-left: 10px;" />
+            </ui:VisualElement>
+            
+            <ui:VisualElement style="flex-direction: row; align-items: center; margin-bottom: 10px;">
+                <ui:Label text="Port:" class="server-url-label" />
+                <ui:TextField name="server-port-field" value="5010" placeholder="Default: 5010" class="server-url-field" />
+            </ui:VisualElement>
+            
+            <ui:VisualElement style="flex-direction: row; align-items: center;">
+                <ui:Button text="Connect" name="connect-button" class="control-button connect-button" />
+                <ui:Button text="Disconnect" name="disconnect-button" class="control-button disconnect-button" />
+                <ui:Toggle label="Auto Reconnect" name="auto-reconnect-toggle" class="toggle-control" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Connection Info Section -->
+        <ui:VisualElement class="section-container">
+            <ui:Label text="Connection Information" class="section-header" />
+            
+            <ui:VisualElement class="info-grid">
+                <ui:VisualElement class="info-row">
+                    <ui:Label text="Last Error:" class="info-label" />
+                    <ui:Label text="None" name="last-error-value" class="info-value" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement class="info-row">
+                    <ui:Label text="Connection Time:" class="info-label" />
+                    <ui:Label text="00:00:00" name="connection-time-value" class="info-value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Statistics Section -->
+        <ui:VisualElement class="section-container">
+            <ui:Label text="Statistics" class="section-header" />
+            
+            <ui:VisualElement class="statistics-container">
+                <ui:VisualElement class="statistic-box">
+                    <ui:Label text="Messages Sent" class="statistic-label" />
+                    <ui:Label text="0" name="messages-sent-value" class="statistic-value" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement class="statistic-box">
+                    <ui:Label text="Messages Received" class="statistic-label" />
+                    <ui:Label text="0" name="messages-received-value" class="statistic-value" />
+                </ui:VisualElement>
+                
+                <ui:VisualElement class="statistic-box">
+                    <ui:Label text="Reconnect Attempts" class="statistic-label" />
+                    <ui:Label text="0" name="reconnect-attempts-value" class="statistic-value" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Logging Controls Section -->
+        <ui:VisualElement class="section-container">
+            <ui:Label text="Logging Controls" class="section-header" />
+            
+            <ui:VisualElement name="logging-container">
+                <!-- These toggles will be created programmatically -->
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>
