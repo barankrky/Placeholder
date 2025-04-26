@@ -73,3 +73,6 @@ Packages/com.unity.package-manager-ui/
 
 # Rider workspace
 *.iws
+
+.roo/
+.vscode/
