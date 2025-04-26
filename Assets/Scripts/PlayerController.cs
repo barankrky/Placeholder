@@ -19,9 +19,6 @@ public class PlayerController : MonoBehaviour
             activeShield.SetActive(false);
         }
         // Calculate the x-coordinate of the screen center in world units
-        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, mainCamera.nearClipPlane);
-        Vector3 screenCenterInWorld = mainCamera.ScreenToWorldPoint(screenCenter);
-        screenHalfWidthInWorldUnits = screenCenterInWorld.x; // This is the x-coord of the center line
     }
 
     void Update()
@@ -36,10 +33,23 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal"); // Sağ (-1) ve sol (1) için giriş
         float moveY = Input.GetAxis("Vertical");   // Yukarı (1) ve aşağı (-1) için giriş
 
-        // Karakterin pozisyonunu güncelle
+        // Calculate movement vector
         Vector3 movement = new Vector3(moveX, moveY, 0) * moveSpeed * Time.deltaTime;
-        transform.position += movement;
 
+        // Determine the direction of movement
+        Vector2 direction = movement.normalized;
+
+        // Calculate the cast distance
+        float distance = movement.magnitude;
+
+        // Perform a box cast to check for collisions with the "BlockedObjects" layer
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, GetComponent<Collider2D>().bounds.size, 0, direction, distance, LayerMask.GetMask("BlockedObjects"));
+
+        // If a collision is detected, prevent movement
+        if (hit.collider == null)
+        {
+            transform.position += movement;
+        }
     }
 
     void HandleDeflectInput()
