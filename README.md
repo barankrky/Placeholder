@@ -2,7 +2,7 @@
 
 ## Konsept
 
-Karakter, kıyamet sonrası bir dünyada geçmektedir. Oyuncu karakteri, kıyamette annesini kaybettiği için akli dengesi yerinde olmayan bir kuryedir. Dünyayı kıyamet hiç kopmamış gibi algılar. Kıyamet kopmadan önce kendisine sipariş verilen son ürünü sahibine teslim etmekle görevlidir.
+Karakter, kıyamet sonrası bir dünyada geçmektedir. Oyuncu karakteri, akli dengesi yerinde olmayan bir kuryedir. Dünyayı kıyamet hiç kopmamış gibi algılar. Kıyamet kopmadan önce kendisine sipariş verilen son ürünü sahibine teslim etmekle görevlidir.
 
 ## Geliştirme Planı
 
